@@ -1,0 +1,172 @@
+
+/* Basic page styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff7fb;
+    color: #333333;
+}
+
+/* Header and navigation */
+header {
+    background-color: #f1d8e8;
+    padding: 20px;
+    border-bottom: 2px solid #d9a8c5;
+}
+
+header h2 {
+    color: #74365d;
+}
+
+nav a {
+    display: inline-block;
+    color: #74365d;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #c04f8a;
+}
+
+/* Gallery introduction */
+.gallery-intro {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.gallery-intro h1 {
+    color: #74365d;
+    font-size: 34px;
+}
+
+.gallery-intro p {
+    line-height: 1.6;
+}
+
+/* CSS Grid gallery */
+.gallery {
+    display: grid;
+    grid-template-areas:
+        "one one two"
+        "three four two"
+        "five six six";
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Gallery items */
+.gallery-item {
+    margin: 0;
+    background-color: white;
+    border: 1px solid #e2bcd2;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #00000015;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item figcaption {
+    padding: 15px;
+    text-align: center;
+    color: #74365d;
+    font-weight: bold;
+}
+
+/* Assigning grid areas */
+.item-one {
+    grid-area: one;
+}
+
+.item-two {
+    grid-area: two;
+}
+
+.item-three {
+    grid-area: three;
+}
+
+.item-four {
+    grid-area: four;
+}
+
+.item-five {
+    grid-area: five;
+}
+
+.item-six {
+    grid-area: six;
+}
+
+/* Animation */
+.gallery-item {
+    animation: appear 1s ease-in-out;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #f1d8e8;
+    color: #74365d;
+}
+
+/* First breakpoint: tablets */
+@media (max-width: 800px) {
+    .gallery {
+        grid-template-areas:
+            "one two"
+            "three four"
+            "five six";
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Second breakpoint: mobile phones */
+@media (max-width: 500px) {
+    nav a {
+        margin: 5px;
+    }
+
+    .gallery-intro h1 {
+        font-size: 26px;
+    }
+
+    .gallery {
+        grid-template-areas:
+            "one"
+            "two"
+            "three"
+            "four"
+            "five"
+            "six";
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .gallery-item img {
+        height: 200px;
+    }
+}
